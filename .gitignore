@@ -3,3 +3,6 @@ dist/
 *.tsbuildinfo
 .env*
 .DS_Store
+
+# Local interview study notes
+/docs/

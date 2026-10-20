@@ -19,4 +19,4 @@ The receive amount starts blank. Entering a number validates the input but does 
 
 The reference price date is shown because this public endpoint can contain historical data. Request loading/error/retry feedback remains real and is handled separately from the synchronous calculation.
 
-`src/app/layout` contains the shell components. `features/swap/model/useSwapForm.ts` owns the form logic and `useTokenPrices.ts` owns query policy. UI styles are co-located SCSS Modules; shared Sass contains only reset, palette/spacing tokens and mixins. See `CONVENTIONS.md` for enforced rules and the root `docs/` for interview notes and validation scenarios.
+`src/app/layout` contains the shell components. `features/swap/model/useSwapForm.ts` owns the form logic and `useTokenPrices.ts` owns query policy. UI styles are co-located SCSS Modules; shared Sass contains only reset, palette/spacing tokens and mixins. See `CONVENTIONS.md` for source and styling rules.
