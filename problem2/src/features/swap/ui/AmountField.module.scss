@@ -105,3 +105,16 @@
     flex-shrink: 0;
   }
 }
+
+.result {
+  animation: resultFadeIn 180ms ease-out;
+}
+
+@keyframes resultFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

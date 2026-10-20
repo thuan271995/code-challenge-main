@@ -47,7 +47,12 @@ export function AmountField(props: Props) {
             onChange={(event) => props.onChange(event.target.value)}
           />
         ) : (
-          <output id={id} aria-label="Estimated amount to receive" title={props.value ?? undefined}>
+          <output
+            id={id}
+            className={props.value !== null ? styles.result : undefined}
+            aria-label="Estimated amount to receive"
+            title={props.value ?? undefined}
+          >
             {props.value ?? '—'}
           </output>
         )}
