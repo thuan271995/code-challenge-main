@@ -1,0 +1,15 @@
+@use '../../../shared/styles/tokens' as t;
+.feedback {
+  border: 1px solid t.$border;
+  border-radius: t.$radius-control;
+  padding: t.space(4);
+  color: t.$muted;
+  font-size: 13px;
+  line-height: 1.7;
+  button {
+    background: t.$surface-muted;
+    border: 1px solid t.$border;
+    border-radius: t.$radius-small;
+    padding: t.space(2) t.space(3);
+  }
+}

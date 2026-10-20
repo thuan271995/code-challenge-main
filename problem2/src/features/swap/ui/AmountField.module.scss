@@ -1,0 +1,107 @@
+@use '../../../shared/styles/tokens' as t;
+@use '../../../shared/styles/mixins' as m;
+
+.amountBox {
+  padding: t.space(4);
+  background: t.$canvas;
+  border: 1px solid t.$border;
+  border-radius: t.$radius-field;
+  &:focus-within {
+    border-color: t.$focus;
+  }
+}
+.fieldHeading,
+.fieldFooter {
+  @include m.flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: t.$muted;
+  label {
+    color: #65705f;
+    font-weight: 600;
+  }
+}
+.amountRow {
+  @include m.flex(t.space(3));
+  margin: t.space(3) 0 t.space(3);
+  input,
+  output {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    letter-spacing: -1px;
+    color: t.$ink;
+    padding: 0;
+    outline-offset: 3px;
+  }
+}
+.tokenButton {
+  @include m.flex(t.space(2));
+  border: 1px solid t.$border;
+  border-radius: t.$radius-pill;
+  background: t.$surface;
+  padding: t.space(2) t.space(2) t.space(2) t.space(2);
+  min-height: 44px;
+  font-weight: 650;
+  font-size: 14px;
+  flex-shrink: 0;
+  &:hover:not(:disabled) {
+    background: #e9f0e5;
+  }
+}
+.receive {
+  background: t.$surface-subtle;
+}
+.amountRow output {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+@include m.below(mobile) {
+  .amountBox {
+    padding: t.space(3);
+  }
+  .amountRow input,
+  .amountRow output {
+    font-size: 27px;
+  }
+}
+@include m.below(mobile) {
+  .amountRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: t.space(2);
+  }
+  .amountRow .tokenButton {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .amountRow input,
+  .amountRow output {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 26px;
+    width: 100%;
+  }
+}
+.error {
+  color: t.$danger;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.fieldFooter {
+  gap: t.space(2);
+  span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    flex: 1;
+  }
+  span:last-child {
+    flex-shrink: 0;
+  }
+}

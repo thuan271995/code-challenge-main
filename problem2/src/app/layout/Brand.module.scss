@@ -1,0 +1,35 @@
+@use '../../shared/styles/tokens' as t;
+@use '../../shared/styles/mixins' as m;
+
+.brand {
+  @include m.flex(t.space(2));
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -1.6px;
+}
+.brandMark {
+  display: grid;
+  place-items: center;
+  background: t.$green;
+  color: t.$surface;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1;
+  transform: rotate(-30deg);
+  margin-right: t.space(1);
+}
+.brandDot {
+  color: t.$green;
+  margin-left: calc(0rem - t.space(1));
+}
+@include m.below(mobile) {
+  .brand {
+    font-size: 26px;
+  }
+}
+.compact {
+  font-size: 21px;
+  color: t.$muted;
+}

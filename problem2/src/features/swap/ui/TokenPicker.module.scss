@@ -1,0 +1,97 @@
+@use '../../../shared/styles/tokens' as t;
+@use '../../../shared/styles/mixins' as m;
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  color: t.$muted;
+  font-weight: 600;
+}
+.iconButton {
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  padding: t.space(2);
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 6px;
+  &:hover:not(:disabled) {
+    background: #e8eee4;
+  }
+}
+.tokenDialog {
+  border: 1px solid t.$border;
+  border-radius: 22px;
+  padding: t.space(6);
+  width: min(420px, calc(100% - 32px));
+  max-height: 80dvh;
+  color: t.$ink;
+  box-shadow: 0 20px 80px #10201530;
+  &::backdrop {
+    background: #162b2266;
+    backdrop-filter: blur(5px);
+  }
+}
+.dialogHeading {
+  @include m.flex;
+  justify-content: space-between;
+  h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+.search {
+  @include m.flex(t.space(2));
+  border: 1px solid t.$border;
+  padding: t.space(3);
+  border-radius: t.$radius-control;
+  margin: t.space(5) 0;
+  input,
+  output {
+    width: 100%;
+    border: 0;
+    background: none;
+    font-size: 14px;
+  }
+}
+.tokenList {
+  max-height: 43dvh;
+  overflow-y: auto;
+}
+.tokenRow {
+  @include m.flex(t.space(3));
+  border: 0;
+  background: transparent;
+  padding: t.space(3) t.space(1);
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  &:hover:not(:disabled) {
+    background: #f1f5ed;
+  }
+  small {
+    display: block;
+    color: t.$muted;
+    font-size: 12px;
+    margin-top: t.space(1);
+  }
+  .tokenPrice {
+    margin-left: auto;
+    font-size: 13px;
+    color: t.$muted;
+  }
+}
+.empty {
+  text-align: center;
+  color: t.$muted;
+  font-size: 14px;
+  padding: t.space(5);
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  color: t.$muted;
+  font-weight: 600;
+}

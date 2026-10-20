@@ -1,0 +1,183 @@
+@use '../../shared/styles/tokens' as t;
+@use '../../shared/styles/mixins' as m;
+
+.intro {
+  padding-top: t.space(4);
+}
+.introTag {
+  @include m.flex;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: #617a65;
+  span {
+    background: #8ba878;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+}
+.title {
+  font-size: clamp(40px, 4.5vw, 61px);
+  line-height: 1.1;
+  letter-spacing: -3px;
+  font-weight: 550;
+  margin: t.space(6) 0 t.space(5);
+  span {
+    color: t.$green;
+  }
+}
+.introDescription {
+  max-width: 365px;
+  color: t.$muted;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.benefits {
+  @include m.flex(t.space(5));
+  font-size: 12px;
+  color: #506557;
+  margin-top: t.space(6);
+  span {
+    @include m.flex(t.space(1));
+  }
+}
+.orbitArt {
+  position: relative;
+  height: 205px;
+  width: 365px;
+  margin-top: t.space(6);
+  overflow: hidden;
+}
+.orbitRing {
+  position: absolute;
+  border: 1px solid #dde4d9;
+  width: 280px;
+  height: 130px;
+  border-radius: 50%;
+  left: 28px;
+  top: 25px;
+  transform: rotate(-25deg);
+}
+.ringTwo {
+  transform: rotate(25deg);
+  width: 255px;
+  height: 145px;
+  left: 40px;
+  top: 16px;
+}
+.orbitCenter {
+  position: absolute;
+  left: 121px;
+  top: 48px;
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  color: #608367;
+  border: 1px solid #d9e3d3;
+  background: linear-gradient(145deg, #f9fcf7, #e4eddf);
+  box-shadow: 0 14px 30px #3653310a;
+  border-radius: 25px;
+  transform: rotate(-12deg);
+}
+.floatingToken {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  font-size: 26px;
+  box-shadow: 0 7px 14px #22382612;
+  border: 4px solid t.$surface;
+}
+.eth {
+  top: 23px;
+  left: 49px;
+  color: #6875a2;
+  background: #e7eafa;
+}
+.dollar {
+  left: 267px;
+  top: 62px;
+  background: #4789c9;
+  color: t.$surface;
+  font-size: 21px;
+}
+.bitcoin {
+  left: 72px;
+  top: 128px;
+  background: #f6cf86;
+  color: #a46e13;
+  font-size: 23px;
+  transform: rotate(15deg);
+}
+.artLabel {
+  position: absolute;
+  left: 153px;
+  top: 164px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: t.$muted;
+  strong {
+    font-weight: 500;
+    color: #5d6e5c;
+  }
+}
+.artSpark {
+  position: absolute;
+  top: 3px;
+  right: 36px;
+  color: #a6b78f;
+  font-size: 20px;
+}
+@include m.below(desktop) {
+  .title {
+    font-size: 48px;
+  }
+  .benefits {
+    gap: t.space(3);
+    flex-wrap: wrap;
+  }
+  .orbitArt {
+    width: 320px;
+  }
+}
+@include m.below(tablet) {
+  .intro {
+    text-align: center;
+    padding: 0;
+  }
+  .introTag,
+  .benefits {
+    justify-content: center;
+  }
+  .title {
+    font-size: 48px;
+    margin-top: t.space(5);
+  }
+  .introDescription {
+    margin: auto;
+    max-width: 370px;
+  }
+  .benefits {
+    margin-top: t.space(5);
+  }
+  .orbitArt {
+    display: none;
+  }
+}
+@include m.below(mobile) {
+  .title {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+  .introTag {
+    font-size: 10px;
+  }
+  .introDescription {
+    font-size: 14px;
+    padding: 0 t.space(2);
+  }
+}

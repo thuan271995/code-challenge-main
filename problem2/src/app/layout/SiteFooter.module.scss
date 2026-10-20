@@ -1,0 +1,30 @@
+@use '../../shared/styles/tokens' as t;
+@use '../../shared/styles/mixins' as m;
+
+.footer {
+  max-width: 1208px;
+  padding: t.space(6) t.space(10);
+  margin: auto;
+  border-top: 1px solid t.$border;
+  @include m.flex(t.space(5));
+  color: t.$muted;
+  font-size: 11px;
+  > span:last-child {
+    margin-left: auto;
+  }
+}
+@include m.below(tablet) {
+  .footer {
+    padding: t.space(5) t.space(6);
+  }
+}
+@include m.below(mobile) {
+  .footer {
+    flex-wrap: wrap;
+    gap: t.space(3);
+    > span:last-child {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

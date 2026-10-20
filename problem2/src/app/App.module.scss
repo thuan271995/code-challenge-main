@@ -1,0 +1,57 @@
+@use '../shared/styles/tokens' as t;
+@use '../shared/styles/mixins' as m;
+
+.main {
+  max-width: 1208px;
+  margin: auto;
+  padding: 0 t.space(10);
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 470px;
+  gap: t.space(16);
+  padding: t.space(18) 0 t.space(15);
+  align-items: start;
+}
+.belowCard {
+  @include m.flex(t.space(1));
+  justify-content: center;
+  font-size: 11px;
+  color: t.$muted;
+  margin-top: t.space(4);
+}
+@include m.below(desktop) {
+  .workspace {
+    grid-template-columns: 1fr 420px;
+    gap: t.space(7);
+    padding-top: t.space(14);
+  }
+}
+@include m.below(tablet) {
+  .main {
+    padding: 0 t.space(6);
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: auto;
+    gap: t.space(7);
+    padding: t.space(9) 0;
+  }
+}
+@include m.below(mobile) {
+  .main {
+    padding: 0 t.space(4);
+  }
+}
+.skipLink {
+  position: fixed;
+  top: -70px;
+  left: 20px;
+  background: t.$surface;
+  padding: t.space(3);
+  z-index: 5;
+  &:focus {
+    top: 10px;
+  }
+}

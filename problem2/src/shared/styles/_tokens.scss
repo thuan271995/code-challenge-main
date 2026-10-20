@@ -1,0 +1,47 @@
+@use 'sass:map';
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1100px,
+);
+$spacing: (
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  12: 3rem,
+  14: 3.5rem,
+  15: 3.75rem,
+  16: 4rem,
+  18: 4.5rem,
+  20: 5rem,
+);
+@function space($step) {
+  @if not map.has-key($spacing, $step) {
+    @error 'Unknown spacing step: #{$step}';
+  }
+  @return map.get($spacing, $step);
+}
+$ink: #192823;
+$muted: #647168;
+$green: #25694e;
+$accent-hover: #194b37;
+$border: #e6e9e6;
+$surface: #fff;
+$canvas: #f6f7f4;
+$surface-muted: #f2f5ef;
+$surface-subtle: #fafbf8;
+$danger: #a63b34;
+$focus: #74ad90;
+$radius: 24px;
+
+$radius-small: 8px;
+$radius-control: 12px;
+$radius-field: 16px;
+$radius-pill: 999px;

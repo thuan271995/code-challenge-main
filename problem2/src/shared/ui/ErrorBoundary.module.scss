@@ -1,0 +1,5 @@
+@use '../styles/tokens' as t;
+.fatal {
+  padding: t.space(20) t.space(6);
+  text-align: center;
+}

@@ -1,0 +1,67 @@
+@use '../../shared/styles/tokens' as t;
+@use '../../shared/styles/mixins' as m;
+
+.siteHeader {
+  max-width: 1320px;
+  padding: t.space(7) t.space(14);
+  margin: auto;
+  @include m.flex(t.space(15));
+  border-bottom: 1px solid t.$border;
+}
+.navigation {
+  @include m.flex(t.space(7));
+  font-size: 14px;
+  color: t.$muted;
+  a {
+    @include m.flex;
+    padding: t.space(2) 0;
+    &:hover {
+      color: t.$green;
+    }
+  }
+  .active {
+    color: t.$ink;
+    font-weight: 650;
+  }
+}
+.network {
+  margin-left: auto;
+  @include m.flex;
+  font-size: 12px;
+  border: 1px solid #dde3db;
+  padding: t.space(2) t.space(3);
+  border-radius: t.$radius-pill;
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #74967d;
+  }
+}
+@include m.below(desktop) {
+  .siteHeader {
+    padding: t.space(6) t.space(10);
+  }
+}
+@include m.below(tablet) {
+  .siteHeader {
+    padding: t.space(5) t.space(6);
+    gap: t.space(7);
+  }
+  .network {
+    display: none;
+  }
+  .navigation {
+    margin-left: auto;
+    gap: t.space(5);
+  }
+}
+@include m.below(mobile) {
+  .siteHeader {
+    padding: t.space(4) t.space(5);
+  }
+  .navigation {
+    font-size: 12px;
+    gap: t.space(4);
+  }
+}
